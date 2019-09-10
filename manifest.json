@@ -16,5 +16,8 @@
     },
     "browser_action": {
         "default_icon": "chika.png"
+    },
+    "icons": {
+        "128": "chika.png"
     }
 }
