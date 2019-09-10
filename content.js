@@ -15,3 +15,6 @@ function gotMessage(message, sender, sendResponse) {
     }
 }
 
+document.querySelectorAll('img').forEach((img) => {
+	img.src = 'https://i.imgur.com/uLAimaY.png';
+});
