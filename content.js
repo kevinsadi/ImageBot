@@ -5,16 +5,6 @@ const playPromise = audio.play();
 
 chrome.runtime.onMessage.addListener(gotMessage);
 
-function gotMessage(message, sender, sendResponse) {
-    console.log(message.txt);
-    if (message.txt === "hello") {
-        console.log("Not again jesus almighty")
-        if (playPromise !== null){
-            playPromise.catch(() => { audio.play(); })
-        }
-    }
-}
-
 const girls = [
 	'https://simg.nicepng.com/png/small/851-8517636_skin-element-http-i-imgur-com-t8thkso-girl.png',
 	'https://i.pinimg.com/236x/7e/f9/68/7ef9680856273163d043024998399f55.jpg'
