@@ -1,2 +1,2 @@
-# PrettyAnimeBot
-Replaces images on webpages with pretty anime girls. Also makes cool sounds.
+# ImageBot
+Replaces images on webpages with whatever images the user wants Also makes cool sounds.
