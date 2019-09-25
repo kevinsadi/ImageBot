@@ -1,6 +1,6 @@
 console.log("Chrome extension go");
 
-const girls = [
+const images = [
 	'https://simg.nicepng.com/png/small/851-8517636_skin-element-http-i-imgur-com-t8thkso-girl.png',
 	'https://i.pinimg.com/236x/7e/f9/68/7ef9680856273163d043024998399f55.jpg',
 	'https://simg.nicepng.com/png/small/851-8517636_skin-element-http-i-imgur-com-t8thkso-girl.png',
@@ -12,25 +12,19 @@ const girls = [
 	'https://i.kym-cdn.com/photos/images/original/001/235/259/8cb.jpg'
 ];
 
-let largestScroll = 0;
-window.addEventListener('scroll', () => {
-	// If the current scroll is equal to our furthest point,
-	// we are in new territory on the page, and we should start modifying images.
-	// IMPORTANT: I have removed this check for now because may not always have it start at the top
+function replaceWithImages() {
+	document.querySelectorAll('img').forEach((img) => {
+		const bounds = img.getBoundingClientRect();
+		// When working with getBoundingClientRect(), treat the top of the
+		// viewport as 0, and the bottom as window.innerHeight.
+		const withinViewport = bounds.bottom > 0 && bounds.top < window.innerHeight;
+		// Modify images within the viewport and those that haven't yet been changed
+		if (withinViewport && !images.includes(img.src)) {
+			img.src = images[Math.floor(Math.random() * images.length)];
+			// TODO: img.addEventListener('click', () => { console.log('play sound'); });
+		}
+	});
+}
 
-	// const currentScroll = window.pageYOffset;
-	// largestScroll = currentScroll > largestScroll ? currentScroll : largestScroll;
-	// if (currentScroll === largestScroll) {
-		document.querySelectorAll('img').forEach((img) => {
-			const bounds = img.getBoundingClientRect();
-			// When working with getBoundingClientRect(), treat the top of the
-			// viewport as 0, and the bottom as window.innerHeight.
-			const withinViewport = bounds.bottom > 0 && bounds.top < window.innerHeight;
-			// Modify images within the viewport and those that haven't yet been changed
-			if (withinViewport && !girls.includes(img.src)) {
-				img.src = girls[Math.floor(Math.random() * girls.length)];
-				// TODO: img.addEventListener('click', () => { console.log('play sound'); });
-			}
-		});
-	// }
-});
+replaceWithImages();
+window.addEventListener('scroll', replaceWithImages);
