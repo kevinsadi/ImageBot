@@ -1,20 +1,18 @@
 {
-    "permissions": ["contextMenus", "clipboardRead", "fileSystem"],
+    "permissions": ["contextMenus", "clipboardRead"],
     "manifest_version": 2,
     "name": "SuperiorAnime",
     "version": "3.0",
     "content_scripts": [
         {
-           "matches": [
-                "<all_urls>"
-           ],
-            "js": ["content.js"]
+           "matches": ["<all_urls>"],
+            "js": ["./js/bundle.js"]
         }
     ],
     "browser_action": {
-		"default_icon": "chika.png"
+		"default_icon": "./assets/chika.png"
 	},
     "icons": {
-        "128": "chika.png"
+        "128": "./assets/chika.png"
 	}
 }

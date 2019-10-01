@@ -1,0 +1,27 @@
+{
+	"name": "replace_images",
+	"version": "1.0.0",
+	"description": "Replaces images on webpages with whatever images the user wants Also makes cool sounds.",
+	"main": "content.js",
+	"private": true,
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/PXLante/PrettyAnimeBot.git"
+	},
+	"contributors": [
+		"Michael Rehamn",
+		"Kevin Sadi"
+	],
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/PXLante/PrettyAnimeBot/issues"
+	},
+	"homepage": "https://github.com/PXLante/PrettyAnimeBot#readme",
+	"dependencies": {
+		"cheerio": "^1.0.0-rc.3",
+		"request": "^2.88.0"
+	}
+}
